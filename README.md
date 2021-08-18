@@ -74,19 +74,22 @@ The `--model-type`s available are:
 
 To run,
 
-1) Build docker image gpu_docker_image from Dockerfile:
+1) Download the GloVe embedding files `glove.6B.50d.txt` and `glove.6B.300d.txt` from the GitHub releases for this repo. 
+   These files can be put in the `data` directory.
+
+2) Build docker image `cnn_pos_image` from Dockerfile:
 ```
 docker build -t cnn_pos_image . 
 ```
 
-2) Run the docker image as a container using:
+3) Run the docker image as a container using:
 ```
 docker run -it --runtime=nvidia -v $PWD:/data cnn_pos_image
 ```
 
 Run it without the `--runtime` parameter if nvidia is not available in the environment.
 
-3) Run the `train_cnn.py` script to train for a given set out of sets 1–8:
+4) Run the `train_cnn.py` script to train for a given set out of sets 1–8:
 ```
 python3 train_cnn.py --data-path data/training_data.csv --model-type deep --embedding-path data/glove.6B.50d.txt --embedding-size 50 --train-overall --set-no 1 --n-runs 50 --n-filters 5 --n-epochs 150 --dropout-rate 0.6 --n-channels 2 --learning-power 4 --experiment 13 --initializer-type xavier
 ```
@@ -99,8 +102,9 @@ A bash script `run.sh` is also available to search across hyperparameter ranges:
 bash run.sh
 ```
 
-4) Run `results.py` to generate A pickle file with the experiment results from the output predictions stored in
-   `models_data`
+5) Run `results.py` to generate a pickle file with the experiment results from the output predictions stored in
+   `models_data`. It can be run as-is if all the models in `run.sh` were run successfully,  otherwise edit it to point 
+   to the right files.
 
 ## Results
 
