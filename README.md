@@ -74,18 +74,19 @@ The `--model-type`s available are:
 
 To run,
 
-1) Build docker image gpu_docker_image from Dockerfile.
+1) Build docker image gpu_docker_image from Dockerfile:
+```
+docker build -t cnn_pos_image . 
+```
 
 2) Run the docker image as a container using:
-
 ```
-docker run -it --runtime=nvidia -v $PWD:/data gpu_docker_image
+docker run -it --runtime=nvidia -v $PWD:/data cnn_pos_image
 ```
 
 Run it without the `--runtime` parameter if nvidia is not available in the environment.
 
 3) Run the `train_cnn.py` script to train for a given set out of sets 1–8:
-
 ```
 python3 train_cnn.py --data-path data/training_data.csv --model-type deep --embedding-path data/glove.6B.50d.txt --embedding-size 50 --train-overall --set-no 1 --n-runs 50 --n-filters 5 --n-epochs 150 --dropout-rate 0.6 --n-channels 2 --learning-power 4 --experiment 13 --initializer-type xavier
 ```
@@ -94,7 +95,6 @@ The `--embedding-size` should correspond to the `--embedding-path` selected, i.e
 or `glove.6B.300d.txt`.
 
 A bash script `run.sh` is also available to search across hyperparameter ranges:
-
 ```
 bash run.sh
 ```
