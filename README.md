@@ -24,8 +24,8 @@ an essay score.
 
 ## What is the model architecture and what kind of hyperparameters are tuned?
 
-This baseline and hyperparameter analysis is based on the 2016 paper by Zhang and Wallace: [A Sensitivity Analysis of (
-and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1510.03820.pdf)
+This baseline and hyperparameter analysis is based on the 2016 paper by Zhang and Wallace: [A Sensitivity Analysis of 
+(and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1510.03820.pdf)
 . This paper explores the effect of architecture components like filter region size, activation function and pooling
 strategy on model performance.
 
