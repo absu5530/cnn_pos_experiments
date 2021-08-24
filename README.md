@@ -1,7 +1,7 @@
 # CNN Hyperparameter Tuning and POS Embedding Experiments using ASAP AES Data
 
 This is a project implementating hyperparameter tuning for Convolutional Neural Networks trained for automated essay
-scoring. It also explores the use of embeddings for part-of-speech (POS) tag embeddings along with word embeddings as
+scoring in Tensorflow. It also explores the use of embeddings for part-of-speech (POS) tag embeddings along with word embeddings as
 input to the neural network. The dataset used is the [ASAP AES dataset](https://www.kaggle.com/c/asap-aes).
 
 ## What is the ASAP AES dataset?
